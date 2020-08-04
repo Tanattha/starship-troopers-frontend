@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Starship Troopers</title>
+</head>
+
+<body>
+    <!-- Game -->
+    <div id="app">
+        <div id="logo" >
+           <!-- <img src="./img/logo-01.png" alt="logo"> -->
+           
+        </div>
+        <div id="container" class="absolute">
+            <div id="start" class="column">
+                <p class="message pre">
+                   HOW TO PLAY
+                </p>
+                <button id="start-btn" class="btn">
+                    <p>GO!</p>
+                </button>
+            </div>
+            <div id="play" class="absolute">
+                <canvas id="canvas" class="absolute"></canvas>
+                <div class="content absolute">
+                    <div class="header">
+                        <ul class="info">
+                            
+                            
+                            <li>
+                                <img src="./img/score.png" alt="score">
+                                SCORE :
+                                <span id="score">&nbsp;00</span>
+                            </li>
+                            <li>
+                                <img src="./img/kill.png" alt="kill">
+                                KILLS :
+                                <span id="shoot">&nbsp;00</span>
+                            </li>
+
+                        </ul>
+                        <ul class="option">
+                       
+                           
+                            <li id="game-pause-btn">
+                                <img class="pause" src="./img/play.png" alt="time">
+                                <img class="pause" src="./img/pause.png" alt="time">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="over" class="column absolute">
+                <div class="game-data">
+                    
+                    <p class="message">
+                        <span>
+                            <img src="./img/score.png" alt="score">
+                        </span>
+                        <span>
+                            --
+                        </span>
+                        <span class="score">00</span>
+                    </p>
+                    <p class="message">
+                        <span>
+                            <img src="./img/kill.png" alt="kill">
+                        </span>
+                        <span>
+                            --
+                        </span>
+                        <span class="shoot">00</span>
+                    </p>
+                </div>
+                <input type="text" id="name" placeholder="Put your name here..." />
+                <button id="submit-btn" class="btn" disabled>
+                    Submit
+                </button>
+            </div>
+            <div id="rank" class="column absolute">
+                <table class="scroll">
+                    <thead>
+                        <tr>
+                            <th>RANK</th>
+                            <th>NAME</th>
+                            <th>KILLS</th>
+                            <th>SCORE</th>                       
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <button id="restart-btn" class="btn">
+                    RESTART
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>Created by : 
+            <a href="https://www.linkedin.com/in/tanattha-thuenim-5b67b31b3/" target=_blank>Tanattha Thuenim</a>
+            <a href="https://github.com/Tanattha" target=_blank>: GitHub</a>
+        </span>
+    </footer>
+    <script src="js/config/config.js"></script>
+    <script src="js/utils/utils.js"></script>
+    <script src="js/utils/res.js"></script>
+    <script src="js/class/scene.js"></script>
+    <script src="js/class/cooldown.js"></script>
+    <script src="js/class/element.js"></script>
+    <script src="js/class/animation.js"></script>
+    <script src="js/class/starship.js"></script>
+    <script src="js/class/bullet.js"></script>
+    <script src="js/class/player.js"></script>
+    <script src="js/class/alien.js"></script>
+    <script src="js/class/ufo.js"></script>
+    <script src="js/class/star.js"></script>
+    <script src="js/scenes/start.js"></script>
+    <script src="js/scenes/play.js"></script>
+    <script src="js/scenes/over.js"></script>
+    <script src="js/scenes/rank.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
