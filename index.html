@@ -13,15 +13,25 @@
 <body>
     <!-- Game -->
     <div id="app">
-        <div id="logo" >
-           <!-- <img src="./img/logo-01.png" alt="logo"> -->
-           
+        <div id="logo">
+            <!-- <img src="./img/logo-01.png" alt="logo"> -->
+
         </div>
         <div id="container" class="absolute">
             <div id="start" class="column">
                 <p class="message pre">
-                   HOW TO PLAY
+                    HOW TO PLAY
+                    Click Arrow Left/Right/Up/Down to move Left/Right/Up/Down
+                    Click Spacebar to shoot
                 </p>
+                
+                <p class="message pre">
+                    RULES 
+                    Kill Aliens, gets 5 points 
+                    Kill UFOs, gets 10 points, need to hit twice.
+                    If a player hit any object, GAME OVER.
+                </p>
+
                 <button id="start-btn" class="btn">
                     <p>GO!</p>
                 </button>
@@ -31,37 +41,31 @@
                 <div class="content absolute">
                     <div class="header">
                         <ul class="info">
-                            
-                            
+
+
                             <li>
-                                <img src="./img/score.png" alt="score">
+                                <img src="./src/score.png" alt="score">
                                 SCORE :
                                 <span id="score">&nbsp;00</span>
                             </li>
                             <li>
-                                <img src="./img/kill.png" alt="kill">
+                                <img src="./src/kill.png" alt="kill">
                                 KILLS :
                                 <span id="shoot">&nbsp;00</span>
                             </li>
 
                         </ul>
-                        <ul class="option">
-                       
-                           
-                            <li id="game-pause-btn">
-                                <img class="pause" src="./img/play.png" alt="time">
-                                <img class="pause" src="./img/pause.png" alt="time">
-                            </li>
-                        </ul>
+                        
                     </div>
                 </div>
             </div>
             <div id="over" class="column absolute">
                 <div class="game-data">
-                    
+
                     <p class="message">
                         <span>
-                            <img src="./img/score.png" alt="score">
+                            <img src="./src/score.png" alt="score">
+                            &nbsp;&nbsp;SCORE
                         </span>
                         <span>
                             --
@@ -70,8 +74,10 @@
                     </p>
                     <p class="message">
                         <span>
-                            <img src="./img/kill.png" alt="kill">
+                            <img src="./src/kill.png" alt="kill">
+                            &nbsp;&nbsp;KILLS
                         </span>
+
                         <span>
                             --
                         </span>
@@ -90,7 +96,7 @@
                             <th>RANK</th>
                             <th>NAME</th>
                             <th>KILLS</th>
-                            <th>SCORE</th>                       
+                            <th>SCORE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,7 +110,7 @@
         </div>
     </div>
     <footer>
-        <span>Created by : 
+        <span>Created by :
             <a href="https://www.linkedin.com/in/tanattha-thuenim-5b67b31b3/" target=_blank>Tanattha Thuenim</a>
             <a href="https://github.com/Tanattha" target=_blank>: GitHub</a>
         </span>

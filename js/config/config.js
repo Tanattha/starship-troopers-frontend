@@ -4,31 +4,28 @@ const fps = 60;
 (() => {
 
     const starship = (callback=false) => {
-        const o = {
+        const obj = {
             w: 100,
             h: 70,
             x: 0,
             y: 0,
             img : 'player',
             speed: 4,
-           // bulletCooldown : 5 * fps,
         }
         if (!callback) {
-            return o;
+            return obj;
         }
-        const data = callback(o);
+        const data = callback(obj);
         for (let key of Object.keys(data)){
-            o[key] = data[key]
+            obj[key] = data[key]
         }
-        return o;
+        return obj;
     }
 
     const bullet = (() => {
         return {
-            w: 20,
-            h: 10,
-            x: 0,
-            y: 0,
+            w: 40,
+            h: 20,
             speed : 5,
         };
     })
@@ -52,11 +49,6 @@ const fps = 60;
     config.game = {
         w: 1280,
         h: 940,
-      /*  fontSize : {
-            min : 12,
-            max : 30,
-            val : 16,
-        },*/
         appendAlienCooldown: [1 * fps, 1 * fps],
         appendUfoCooldown: [2 * fps, 2 * fps],
         appendStarCooldown : [2 * fps,2 * fps],
@@ -67,47 +59,39 @@ const fps = 60;
         shootUfo: 10,
     }
 
-    config.data = ()=>{
-        return {
-            score: 0,
-            shoot: 0,
-            name : '',
-        }
-    }
-   
     config.player = (() => {
         const { h } = config.game;
-        const o = starship(o => {
+        const obj = starship (() => {
             return {
-                y: h / 2 - o.h / 2,
+                y: h / 2,
                 bulletCooldown: 0.3 * fps,
             }
         });
-        return o;
+        return obj;
     })();
 
     config.alien = (() => {
         const { w } = config.game;
-        const o = starship(o => {
+        const obj = starship (() => {
             return {
                 w: 80,
                 h: 80,
-                x: w + o.w,
+                x: w,
                 speed: -7,
                 img : batchImport('alien_', 5),
                 life : 1
             }
-        })
-        return o;
+        });
+        return obj;
     })();
 
     config.ufo = (() => {
         const { w } = config.game;
-        const o = starship(o => {
+        const o = starship (() => {
             return {
                 w: 180,
                 h: 120,
-                x: w + o.w,
+                x: w,   
                 speed: -5,
                 img : batchImport('ufo_', 3),
                 life : 2,
@@ -129,12 +113,13 @@ const fps = 60;
         return o;
     })();
 
-    config.alienBullet = (() => {
-        let o = bullet();
-        o.img = 'alienBullet';
-        return o;
-
-    })();
+    config.data = ()=>{
+        return {
+            score: 0,
+            shoot: 0,
+            name : '',
+        }
+    }
 
     config.starshipDeathAnimation = {
         img: 'boom',
@@ -144,23 +129,12 @@ const fps = 60;
         cooldown: 0.05 * fps,
     }
 
-    config.bulletDeathAnimation = {
-        img: 'boom',
-        loop : false,
-        row: 4,
-        col: 4,
-        cooldown: 0.01 * fps,
-    }
-
-  
-
     config.images = (() => {
-        const path = './img/';
+        const path = './src/';
         let images = {
             boom: path + 'boom.png',
             player: path + 'user.png',
             playerBullet: path + 'bullet.png',
-            alienBullet: path + 'alienBullet.png',
         };
 
         return Object.assign(
@@ -173,10 +147,10 @@ const fps = 60;
     })();
 
     config.audios = (()=>{
-        const path = './sound/';
+        const path = './src/sfx/';
         return {
-            bg : path + 'background.mp3',
-            destroyed : path + 'destroyed.mp3',
+            bg : path + 'ost.mp3',
+            killed : path + 'killed.mp3',
             shoot : path + 'shoot.mp3',
         }
     })();

@@ -6,10 +6,10 @@ class Element{
         this.isDeath = false;
         this.life = 1;
         this.deg = 0;
-        this.rotateState = false;
-        this.rotateSpeed = 2;
-        this.textRise = 15;
-        this.text = "text";
+       // this.rotateState = false;
+       // this.rotateSpeed = 2;
+       // this.textRise = 15;
+       // this.text = "text";
     }
 
     setup(obj) {
@@ -76,20 +76,6 @@ class Element{
         this.scene.draw(this.getDrawInfo());
     } 
 
-    drawText(callback) {
-        this.setInitY();
-        this.scene.setFontStyle();
-        this.y--;
-        this.scene.drawText({
-            text: this.text,
-            x: this.x,
-            y : this.y,
-        })
-        if (this.initY - this.y > this.textRise) {
-            callback && callback();
-        }
-    }
-
     rotate() {
         this.deg+=this.rotateSpeed;
         this.scene.rotateDraw({
@@ -119,13 +105,6 @@ class Element{
         this.isDeath = true;
     }
 
-    setInitY() {
-        if (this.initY) {
-            return;
-        }
-        this.initY = this.y;
-    }
-
     isEnter() {
         const { w, h } = config.game;
         return (
@@ -145,5 +124,28 @@ class Element{
             this.y > h
         );
     }
-    
+
+    /*
+    setInitY() {
+        if (this.initY) {
+            return;
+        }
+        this.initY = this.y;
+    }
+    */
+    /*
+    drawText(callback) {
+        this.setInitY();
+        this.scene.setFontStyle();
+        this.y--;
+        this.scene.drawText({
+            text: this.text,
+            x: this.x,
+            y : this.y,
+        })
+        if (this.initY - this.y > this.textRise) {
+            callback && callback();
+        }
+    }
+*/
 }

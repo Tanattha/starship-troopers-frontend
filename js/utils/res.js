@@ -26,31 +26,15 @@ const res = (() => {
     o.loop = (key)=>{
         _audios[key].loop = true;
     }
-    
-    o.pause = (key)=>{
-        _audios[key].pause();  
-    };
-
+  
     o.end = (key)=>{
-        _audios[key].currentTime = 0;
+       _audios[key].currentTime = 0;
         _audios[key].pause();  
     };
 
     o.replay = (key)=>{
         o.end(key);
         o.play(key);
-    }
-
-    o.mute = ()=>{
-        for (const el of Object.values(_audios)){
-            el.muted = true;
-        }
-    }
-
-    o.speak = ()=>{
-        for (const el of Object.values(_audios)){
-            el.muted = false;
-        }
     }
 
     o.loadAssets = callback => {

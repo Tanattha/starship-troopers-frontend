@@ -152,7 +152,7 @@ const loadResource = (list, Obj, callback) => {
     const keys = Object.keys(list);
     const result = {};
     const len = keys.length;
-    // Obj Type is Image or Audio
+
     const load = Obj === Image ? 'onload' : 'onloadedmetadata';
     let count = 0;
     const call = (obj, key) => {

@@ -8,41 +8,19 @@ class Play extends Scene {
         this.initCanvas();
     }
     setup() {
-        this.muteFlag = false;
         this.initData();
         this.initPlayer();
         this.updateScore();
-        $("#logo").classList.add('play-status');
-        this.event();
         this.start();
     }
 
     start() {
-        this.pauseFlag = false;
         raf.reg(this.raf_id, this.update.bind(this));
         res.play('bg');
-        $('#game-pause-btn').classList.add('active');
-    }
-    pause() {
-        this.pauseFlag = true;
-        raf.remove(this.raf_id);
-        res.pause('bg');
-        $('#game-pause-btn').classList.remove('active');
-    }
-
-    uninstall() {
-        raf.remove(this.raf_id);
-        res.end('bg');
-        $("#logo").classList.remove('play-status');
-        hotkey.clearAll();
     }
 
     initData() {
-
-        this.pauseFlag = false;
-        this.timeCooldown = new Cooldown(fps, true);
         this.playerBullets = [];
-        this.alienBullets = [];
         this.allAliens = [];
 
         this.aliens = {
@@ -67,14 +45,14 @@ class Play extends Scene {
         if (!a.run || !b.run) {
             return;
         }
-        var yCoolision = (a, b) => {
+        var yCollision = (a, b) => {
             return a.y > b.y && a.y < b.y + b.h;
         };
-        var xCoolision = (a, b) => {
+        var xCollision = (a, b) => {
             return a.x > b.x && a.x < b.x + b.w;
         };
-        if (yCoolision(a, b) || yCoolision(b, a)) {
-            if (xCoolision(a, b) || xCoolision(b, a)) {
+        if (yCollision(a, b) || yCollision(b, a)) {
+            if (xCoolision(a, b) || xCollision(b, a)) {
                 callback(a, b);
             }
         }
@@ -96,7 +74,6 @@ class Play extends Scene {
 
     playerCollision(el) {
         this.collision(this.player, el, () => {
-            //callback(el);
             el.death();
             this.game.over();
         });
@@ -142,7 +119,7 @@ class Play extends Scene {
         } = config.scoreConfig;
        
        this.updateing(this.playerBullets, bullet => {
-            this.bulletCollision(bullet, this.alienBullets, (el) => {
+            this.bulletCollision(bullet, this.playerBullets, (el) => {
                 el.death();
             });
             
@@ -192,12 +169,7 @@ class Play extends Scene {
         this.appendElement();
         this.updateElements();
     }
-/*
-    updateTime() {
-        const game = this.game;
-        $('#time').innerHTML = numberFormat(game.data.time);
-    }
-    */
+
     updateScore(num = 0) {
         const game = this.game;
         const call = () => {
@@ -224,7 +196,6 @@ class Play extends Scene {
         this.canvas = $('#canvas');
         this.canvas.width = config.game.w;
         this.canvas.height = config.game.h;
-
         this.ctx = this.canvas.getContext('2d');
     }
 
@@ -244,35 +215,11 @@ class Play extends Scene {
         this.ctx.restore();
     }
 
-    setFontStyle(font = "20px Arial", yellow = "yellow") {
-        this.ctx.font = font;
-        this.ctx.fillStyle = yellow;
-    }
-
     drawText(data) {
         this.ctx.fillText(data.text, data.x, data.y);
     }
 
-    event() {
-        const togglePause = ()=>{
-            this.pauseFlag ? this.start() : this.pause();
-        }
-      
-        hotkey.reg('p', () => {
-            togglePause();
-        }, true);
-        
-      
-        on(
-            $('#game-pause-btn'),
-            'click',
-            ()=>{
-                togglePause()
-            }
-        )
-    }
-
     shoot() {
-        res.replay('destroyed');
+        res.replay('killed');
     }
 }

@@ -30,6 +30,7 @@ class Player extends Starship{
             if (this.scene.game.data.end) return;
             callback.call(this);
         };
+
         const keys = {
             'ArrowUp': this.up,
             'ArrowLeft': this.left,
@@ -37,7 +38,6 @@ class Player extends Starship{
             'ArrowRight': this.right,
         };
              
-
         Object.keys(keys).map((key) => {
             hotkey.reg(key, () => {
                called(keys[key]);

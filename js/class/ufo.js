@@ -1,7 +1,7 @@
 class Ufo extends Starship{
 
     setup() {
-        const { w, h } = config.game;
+        const { h } = config.game;
         super.setup('ufo');
         this.y = random(0, h-this.h);
     }
