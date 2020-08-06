@@ -10,7 +10,7 @@ You'll be in a role of starship troopers to kill all the enemies. Starship-troop
 
 https://tanattha.github.io/starship-troopers-frontend/
 
-## VDO WALKTHROGH
+## Video Walkthrough
 
 [CLICK HERE](https://youtu.be/MRv4XRmLPM4)
 
