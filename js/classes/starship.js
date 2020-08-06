@@ -50,6 +50,8 @@ class Starship extends Element{
             y: this.y,
             w: this.w,
             h : this.h,
+            
+
         }).end(() => {
             this.isDeath = true;
         });

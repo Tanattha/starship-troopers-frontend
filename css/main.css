@@ -42,6 +42,12 @@ html,body{
     justify-content: space-around;
 }
 
+.absolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .howtoplay {
     font-size: 1.5rem;
     line-height: 1.5;
@@ -88,11 +94,7 @@ html,body{
     transition: all 0.5s ease;
 }
 
-.absolute{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
 
 tbody tr {
     height: 45px;

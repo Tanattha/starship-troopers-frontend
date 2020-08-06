@@ -26,7 +26,6 @@ class Over extends Scene{
             ()=>{
             
                 let configObj = {
-                
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -34,11 +33,17 @@ class Over extends Scene{
                 },
           body: JSON.stringify({username: name.value, num: getScore.innerText})
             }
-            fetch(`${BASE_URL}/users`, configObj) 
-            //.then(response => response.json()) 
-             this.game.rank()
-             .catch((error) => {console.error('Error:', error)});
-            });       
+            fetch(`${BASE_URL}/users`, configObj)
+            .then(response => response.json())
+            .catch((error) => {console.error('Error:', error)});
+
+           fetch(`${BASE_URL}/topten`), function(json) {
+                JSON.stringify(json);            
+                location.reload();
+            }
+           
+            this.game.rank()
+        })
         on(
             name,
             'input',

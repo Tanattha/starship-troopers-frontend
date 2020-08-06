@@ -1,12 +1,18 @@
-[starship-troopers-backend-here](https://github.com/Tanattha/starship-troopers-backend)
+[Starship-Troopers-Backend-Here](https://github.com/Tanattha/starship-troopers-backend)
 
-# Starship-troopers-frontend
+# Starship-Troopers-Frontend
 
-You'll be a role of starship troopers to kill all the enemies. Starship-troopers was built with JavaScript on the frontend and Rails on the backend.
+You'll be in a role of starship troopers to kill all the enemies. Starship-troopers was built with JavaScript on the frontend and Rails on the backend.
 
 <img src="./src/game.png" width="640" height="400" />
 
 ## Live App
+
+https://tanattha.github.io/starship-troopers-frontend/
+
+## Video Walkthrough
+
+[CLICK HERE](https://youtu.be/MRv4XRmLPM4)
 
 
 ## How to play

@@ -143,18 +143,9 @@ class Play extends Scene {
       
     }
 
-    updateAliens() {
-        const {
-            shootAlien,
-            shootUfo,
-        } = config.scoreConfig;
-      
+    updateAliens() {  
         this.updateing(this.aliens.arr, alien => {
             this.playerCollision(alien, () => {
-                this.updateScore(
-                    alien instanceof Ufo ?
-                    shootUfo : shootAlien
-                );
                 this.updateshoot();
                 this.shoot();
             })
