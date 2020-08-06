@@ -26,7 +26,6 @@ class Player extends Starship{
     event() {
         const called = callback=>{
             if (!this.run) return;
-            if (this.scene.pauseFlag) return;
             if (this.scene.game.data.end) return;
             callback.call(this);
         };

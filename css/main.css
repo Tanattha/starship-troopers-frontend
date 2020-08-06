@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url('../src/myfont.ttf');
+  }
+
+#play {
+    background: url('../src/bg.jpg');
+    background-size: 100% 100%;
+}
+
+html,body{
+    font-family: myfont;
+    width: 100%;
+    height: 100%;
+}
+#logo {
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+    padding: 0.8% 0;
+    width: 100%;
+    text-align: center;
+}
+
+#logo img {
+    width: 10%;
+}
+
+#logo.play-status img {
+    display: none;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.howtoplay {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: pre-line;
+}
+
+
+.head {
+    color: red;
+}
+
+.btn {
+    font-family: myfont;
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    color: inherit;
+    margin: 0 auto 5px auto;
+    border: solid 1px #D81845;
+    background: #E51647;
+    text-align: center;
+    padding: 6px 20px;
+    transition: all 0.1s;
+    box-shadow: 0px 5px 0px #8A1E38;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+.btn:disabled{
+    opacity: 0.6;
+}
+.btn:active{
+    box-shadow: 0px 2px 0px #8A1E38;
+    position:relative;
+    top:7px;
+}
+.btn::after{
+    position: absolute;
+    margin: auto;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.absolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+tbody tr {
+    height: 45px;
+}
+
+#canvas {
+    z-index: 3;
+    pointer-events: none;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: #ddd;
+    overflow: hidden;
+}
+
+#app {
+    position: relative;
+    margin: 10px auto;
+    background: #222;
+    font-size: 14px;
+    box-shadow: 5px 5px 10px -5px #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#container,
+#container>div {
+    width: 100%;
+    height: 100%;
+}
+
+#container>div {
+    padding-top: 8%;
+    visibility: hidden;
+    text-align: center;
+    opacity: 0;
+}
+
+#container>div.action {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+
+.content .header ul {
+    width: 45%;
+    height: 50px;
+    font-size: 20px;
+}
+
+.content .header li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.content .header ul,
+.content .header ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#over .message {
+    margin-left: 29%;
+    width: 70%;
+    display: flex;
+    font-size: 25px;
+}
+
+#over .message img {
+    width: 50px;
+    height: 50px;
+}
+
+#over .message span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 20%;
+}
+
+#over input {
+    font-family: myfont;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1rem;
+    width: 50%;
+    margin: 0 auto;
+    height: 40px;
+}
+
+table {
+    height: 80%;
+    overflow: hidden;
+}
+
+footer{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    color: #333;
+    font-size: 0.9rem;
+    opacity: 0.8;
+
+}
+footer a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.scroll {
+    padding-top: 30px;
+    display: block;
+  }
+  
+thead tr {
+    color: red;
+    font-size: 20px;
+ }
+
+.scroll thead,
+ tbody tr {
+     display: table;
+     width: 100%;
+     table-layout: fixed;
+}
+

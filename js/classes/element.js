@@ -6,10 +6,6 @@ class Element{
         this.isDeath = false;
         this.life = 1;
         this.deg = 0;
-       // this.rotateState = false;
-       // this.rotateSpeed = 2;
-       // this.textRise = 15;
-       // this.text = "text";
     }
 
     setup(obj) {
@@ -125,27 +121,4 @@ class Element{
         );
     }
 
-    /*
-    setInitY() {
-        if (this.initY) {
-            return;
-        }
-        this.initY = this.y;
-    }
-    */
-    /*
-    drawText(callback) {
-        this.setInitY();
-        this.scene.setFontStyle();
-        this.y--;
-        this.scene.drawText({
-            text: this.text,
-            x: this.x,
-            y : this.y,
-        })
-        if (this.initY - this.y > this.textRise) {
-            callback && callback();
-        }
-    }
-*/
 }

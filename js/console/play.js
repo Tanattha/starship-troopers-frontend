@@ -2,23 +2,33 @@ class Play extends Scene {
     constructor(el,game){
         super(el,game);
         this.created();
+        
     }
     created(){
         this.raf_id = 'play_update';
         this.initCanvas();
+       
     }
     setup() {
         this.initData();
         this.initPlayer();
         this.updateScore();
         this.start();
+        $("#logo").classList.add('play-status'); 
+       
     }
 
     start() {
         raf.reg(this.raf_id, this.update.bind(this));
         res.play('bg');
+       
     }
-
+    
+    end() {
+        raf.remove(this.raf_id);
+        res.end('bg');
+        hotkey.clearAll();
+    }
     initData() {
         this.playerBullets = [];
         this.allAliens = [];
@@ -52,7 +62,7 @@ class Play extends Scene {
             return a.x > b.x && a.x < b.x + b.w;
         };
         if (yCollision(a, b) || yCollision(b, a)) {
-            if (xCoolision(a, b) || xCollision(b, a)) {
+            if (xCollision(a, b) || xCollision(b, a)) {
                 callback(a, b);
             }
         }
@@ -65,9 +75,7 @@ class Play extends Scene {
                 b.reduceLife();
                 if (!b.run) {
                     callback(b);
-                }
-              
-              
+                }             
             });
         });
     }

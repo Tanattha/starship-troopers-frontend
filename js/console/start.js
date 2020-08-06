@@ -1,3 +1,4 @@
+
 class Start extends Scene {
     setup() {
         super.setup();
@@ -11,12 +12,14 @@ class Start extends Scene {
             btn,
             'click',
             () => {
+              
                 btn.setAttribute('disabled', 'disabled');
                 res.loadAssets(() => {
                     this.game.play();
                     btn.removeAttribute('disabled');
                 })
             }
+           
         )
     }
 }

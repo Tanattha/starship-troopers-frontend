@@ -1,5 +1,7 @@
 const config = {};
 const fps = 60;
+const BASE_URL = 'http://127.0.0.1:3000';
+
 
 (() => {
 
@@ -48,7 +50,8 @@ const fps = 60;
 
     config.game = {
         w: 1280,
-        h: 940,
+        h: 750,
+        
         appendAlienCooldown: [1 * fps, 1 * fps],
         appendUfoCooldown: [2 * fps, 2 * fps],
         appendStarCooldown : [2 * fps,2 * fps],
@@ -102,7 +105,7 @@ const fps = 60;
 
     config.star = (() => {
         const o = {};
-        o.img = batchImport('star_', 12);
+        o.img = batchImport('star_', 10);
         return o;
     })();
 
@@ -120,7 +123,7 @@ const fps = 60;
             name : '',
         }
     }
-
+   
     config.starshipDeathAnimation = {
         img: 'boom',
         loop : false,
@@ -139,7 +142,7 @@ const fps = 60;
 
         return Object.assign(
             batchAdd(path+'/aliens/','alien_',5,'png'),
-            batchAdd(path+'/star/','star_',12,'png'),
+            batchAdd(path+'/star/','star_',10,'png'),
             batchAdd(path+'/ufos/','ufo_',3,'png'),
             images,
         )

@@ -1,7 +1,6 @@
+
 const log = console.log.bind(console);
-
 const $ = elem => document.querySelector(elem);
-
 const $s = elem => document.querySelectorAll(elem);
 
 const style = (el, styleObj) => {
@@ -20,7 +19,7 @@ const numberFormat = (num) => {
     const res = n > 9 ? n : '0' + n;
     return isPlus ? res : `-${res}`;
 };
-
+//random elements
 const random = (end, start) => {
     return Math.floor(Math.random() * (end - start)) + start;
 };
@@ -152,7 +151,6 @@ const loadResource = (list, Obj, callback) => {
     const keys = Object.keys(list);
     const result = {};
     const len = keys.length;
-
     const load = Obj === Image ? 'onload' : 'onloadedmetadata';
     let count = 0;
     const call = (obj, key) => {

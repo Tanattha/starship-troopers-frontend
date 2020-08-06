@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/main.css">
     <title>Starship Troopers</title>
 </head>
 
 <body>
-    <!-- Game -->
     <div id="app">
         <div id="logo">
-            <!-- <img src="./img/logo-01.png" alt="logo"> -->
+            <img src="./src/logo.png" alt="logo">
 
         </div>
         <div id="container" class="absolute">
             <div id="start" class="column">
-                <p class="message pre">
-                    HOW TO PLAY
-                    Click Arrow Left/Right/Up/Down to move Left/Right/Up/Down
-                    Click Spacebar to shoot
-                </p>
-                
-                <p class="message pre">
-                    RULES 
-                    Kill Aliens, gets 5 points 
-                    Kill UFOs, gets 10 points, need to hit twice.
-                    If a player hit any object, GAME OVER.
-                </p>
 
+                <ul>
+                    <li class="howtoplay head">
+                        HOW TO PLAY
+                    </li>
+                    <li class="howtoplay">
+                        Click Arrow Left/Right/Up/Down to move Left/Right/Up/Down
+                        Click Spacebar to shoot
+                    </li>
+                </ul>
+                <ul>
+                    <li class="howtoplay head">
+                        RULES
+                    </li>
+
+                    <li class="howtoplay">
+                        Shoot an Alien, gets 5 points
+                        Shoot an UFO, gets 10 points, need to hit twice.
+                        If a player hit any object, GAME OVER.
+                    </li>
+                </ul>
                 <button id="start-btn" class="btn">
                     <p>GO!</p>
                 </button>
@@ -55,7 +64,7 @@
                             </li>
 
                         </ul>
-                        
+
                     </div>
                 </div>
             </div>
@@ -86,7 +95,7 @@
                 </div>
                 <input type="text" id="name" placeholder="Put your name here..." />
                 <button id="submit-btn" class="btn" disabled>
-                    Submit
+                    SUBMIT
                 </button>
             </div>
             <div id="rank" class="column absolute">
@@ -95,7 +104,6 @@
                         <tr>
                             <th>RANK</th>
                             <th>NAME</th>
-                            <th>KILLS</th>
                             <th>SCORE</th>
                         </tr>
                     </thead>
@@ -104,34 +112,35 @@
                     </tbody>
                 </table>
                 <button id="restart-btn" class="btn">
-                    RESTART
+                    PLAY AGAIN
                 </button>
             </div>
         </div>
     </div>
+
     <footer>
         <span>Created by :
             <a href="https://www.linkedin.com/in/tanattha-thuenim-5b67b31b3/" target=_blank>Tanattha Thuenim</a>
             <a href="https://github.com/Tanattha" target=_blank>: GitHub</a>
         </span>
     </footer>
-    <script src="js/config/config.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/utils/utils.js"></script>
     <script src="js/utils/res.js"></script>
-    <script src="js/class/scene.js"></script>
-    <script src="js/class/cooldown.js"></script>
-    <script src="js/class/element.js"></script>
-    <script src="js/class/animation.js"></script>
-    <script src="js/class/starship.js"></script>
-    <script src="js/class/bullet.js"></script>
-    <script src="js/class/player.js"></script>
-    <script src="js/class/alien.js"></script>
-    <script src="js/class/ufo.js"></script>
-    <script src="js/class/star.js"></script>
-    <script src="js/scenes/start.js"></script>
-    <script src="js/scenes/play.js"></script>
-    <script src="js/scenes/over.js"></script>
-    <script src="js/scenes/rank.js"></script>
+    <script src="js/classes/scene.js"></script>
+    <script src="js/classes/cooldown.js"></script>
+    <script src="js/classes/element.js"></script>
+    <script src="js/classes/animation.js"></script>
+    <script src="js/classes/starship.js"></script>
+    <script src="js/classes/bullet.js"></script>
+    <script src="js/classes/player.js"></script>
+    <script src="js/classes/alien.js"></script>
+    <script src="js/classes/ufo.js"></script>
+    <script src="js/classes/star.js"></script>
+    <script src="js/console/start.js"></script>
+    <script src="js/console/play.js"></script>
+    <script src="js/console/over.js"></script>
+    <script src="js/console/rank.js"></script>
     <script src="js/game.js"></script>
     <script src="js/main.js"></script>
 </body>
