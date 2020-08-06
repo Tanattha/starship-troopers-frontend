@@ -1,4 +1,4 @@
-[Starship-Troopers-Backend-here](https://github.com/Tanattha/starship-troopers-backend)
+[Starship-Troopers-Backend-Here](https://github.com/Tanattha/starship-troopers-backend)
 
 # Starship-Troopers-Frontend
 
