@@ -1,6 +1,6 @@
 const config = {};
 const fps = 60;
-const BASE_URL = 'localhost:3000';
+const BASE_URL = 'http://127.0.0.1:3000';
 //const BASE_URL = 'https://tanattha.github.io/starship-troopers-frontend'
 
 (() => {
