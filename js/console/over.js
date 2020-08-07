@@ -6,6 +6,7 @@ class Over extends Scene{
         this.event();
         $("#logo").classList.remove('play-status');
         $('#name').value = '';
+        res.end('ost');
 
     }
 
@@ -36,7 +37,7 @@ class Over extends Scene{
             },
                 body: JSON.stringify({username: name.value, num: getScore.innerText})
             }
-          
+              
                 fetch(`${BASE_URL}/users`, configObj)
                 .then(response => response.json())
                 .then(res => console.log(res))
@@ -46,19 +47,9 @@ class Over extends Scene{
                 .then(res => console.log(res))
                
                 .catch((error) => {console.error('Error:', error)});
+                
                 this.game.rank()
             
         })
-/*
-        on(
-            name,
-            'input',
-            ()=>{
-              //  const empty = name.value === '';
-                const empty = $('#name').value = '';
-                const attr = empty ? 'setAttribute' : 'removeAttribute';
-                btn[attr]('disabled','disabled');
-            }
-        )*/
     }   
 }

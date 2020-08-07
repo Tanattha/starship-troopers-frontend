@@ -4,7 +4,7 @@ class Start extends Scene {
         super.setup();
         this.game.initData();
         this.event();
-        
+        res.end('ost');
     }
 
     event() {
