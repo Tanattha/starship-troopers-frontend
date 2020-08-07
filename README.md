@@ -32,9 +32,10 @@ open index.html
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Special Thanks
-
+```
 https://www.remove.bg/upload
 https://www.zapsplat.com/
 https://www.pexels.com/
 https://favicon.io/
 [Font: Black Ops One Designed by James Grieshaber](https://fonts.google.com/specimen/Black+Ops+One#standard-styles)
+```
