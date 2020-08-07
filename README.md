@@ -33,8 +33,10 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Special Thanks
 
+https://www.clipartmax.com/<br />
 https://www.remove.bg/upload<br />
 https://www.zapsplat.com/<br />
 https://www.pexels.com/<br />
 https://favicon.io/<br />
 [Font: Black Ops One Designed by James Grieshaber](https://fonts.google.com/specimen/Black+Ops+One#standard-styles)
+and everthing else from google!
