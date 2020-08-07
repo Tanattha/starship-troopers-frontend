@@ -8,7 +8,7 @@ You'll be in a role of starship troopers to kill all the enemies. Starship-troop
 
 ## Live App
 
-https://tanattha.github.io/starship-troopers-frontend/
+[CLICK HERE](https://tanattha.github.io/starship-troopers-frontend)
 
 ## Video Walkthrough
 
