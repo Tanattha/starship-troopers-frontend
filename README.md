@@ -4,7 +4,7 @@
 
 You'll be in a role of starship troopers to kill all the enemies. Starship-troopers was built with JavaScript on the frontend and Rails on the backend.
 
-<img src="./src/game.png" width="640" height="400" />
+<img src="https://media.giphy.com/media/lRdHUdJLRpyz3rBldB/giphy.gif" width="640" height="400" />
 
 ## Live App
 
