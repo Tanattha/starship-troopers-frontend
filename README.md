@@ -31,11 +31,8 @@ open index.html
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-<<<<<<< HEAD
+
 ## Speical Thanks
-=======
-## Special Thanks
->>>>>>> 1b1d3e7981f87a487ac5eb4f372e65817032cf64
 
 https://www.clipartmax.com/<br />
 https://www.remove.bg/upload<br />
@@ -43,8 +40,6 @@ https://www.zapsplat.com/<br />
 https://www.pexels.com/<br />
 https://favicon.io/<br />
 [Font: Black Ops One Designed by James Grieshaber](https://fonts.google.com/specimen/Black+Ops+One#standard-styles)
-<<<<<<< HEAD
+
 and everything else from google!
-=======
-and everything else from google!
->>>>>>> 1b1d3e7981f87a487ac5eb4f372e65817032cf64
+
