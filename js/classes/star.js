@@ -10,7 +10,6 @@ class Star extends Element{
         this.x = w + this.w;
         this.y = random(0, h - this.h);
     }
-
     move() {
         this.x += this.speed;
     }

@@ -103,8 +103,8 @@ const hotkey = (() => {
 
     raf.reg('HotKey_loop', loop);
 
-    on(window, 'keydown', e => {
-        let keyCode = e.key.toLocaleUpperCase();
+     on(window, 'keydown', e => {
+        let keyCode = e.key;
         if (!data[keyCode]) {
             return;
         }
@@ -112,7 +112,7 @@ const hotkey = (() => {
         data[keyCode].active = true;
     });
     on(window, 'keyup', e => {
-        let keyCode = e.key.toLocaleUpperCase();
+        let keyCode = e.key;
         if (!data[keyCode]) {
             return;
         }
@@ -129,7 +129,6 @@ const hotkey = (() => {
     return {
         reg: (keyCode, callback, once = false) => {
             keyCode = "" + keyCode;
-            keyCode = keyCode.toLocaleUpperCase();
             if (!data[keyCode]) {
                 regKeyCode(keyCode);
             }

@@ -6,6 +6,7 @@ class Rank extends Scene {
     }
  
     rank() {
+        
         fetch(`${BASE_URL}/topten`)
         
         .then(response => response.json())
@@ -24,7 +25,6 @@ class Rank extends Scene {
     })
     .catch((error) => {console.error('Error:', error)});
     }
-
 
     event() {
         on(

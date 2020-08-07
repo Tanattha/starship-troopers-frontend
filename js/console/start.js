@@ -4,10 +4,12 @@ class Start extends Scene {
         super.setup();
         this.game.initData();
         this.event();
+        
     }
 
     event() {
         const btn = $('#start-btn');
+       
         on(
             btn,
             'click',

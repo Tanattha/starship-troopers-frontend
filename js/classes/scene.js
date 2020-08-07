@@ -5,21 +5,14 @@ class Scene{
     }
     
     created(){
-        
     }
-
     setup() {
-        
     }
-
     end(){
-        
     }
-
     show() {
         this.el.classList.add('action');
     }
-
     hidden() {
         this.el.classList.remove('action');
     }

@@ -5,15 +5,18 @@ class Over extends Scene{
         this.updateView()
         this.event();
         $("#logo").classList.remove('play-status');
+        $('#name').value = '';
+
     }
 
     updateView(){
         const {
             score,
-            shoot,
+            shoot
         } = this.game.data;
         $('#over .shoot').innerHTML = numberFormat(shoot);
         $('#over .score').innerHTML = numberFormat(score);
+        
     }
 
     event(){
@@ -24,34 +27,38 @@ class Over extends Scene{
             btn,
             'click',
             ()=>{
+       
+           let configObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"  
+            },
+                body: JSON.stringify({username: name.value, num: getScore.innerText})
+            }
+          
+                fetch(`${BASE_URL}/users`, configObj)
+                .then(response => response.json())
+                .then(res => console.log(res))
+               
+                fetch(`${BASE_URL}/topten`, {method: 'get'})
+                .then(response => response.json())
+                .then(res => console.log(res))
+               
+                .catch((error) => {console.error('Error:', error)});
+                this.game.rank()
             
-                let configObj = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"  
-                },
-          body: JSON.stringify({username: name.value, num: getScore.innerText})
-            }
-            fetch(`${BASE_URL}/users`, configObj)
-            .then(response => response.json())
-            .catch((error) => {console.error('Error:', error)});
-
-           fetch(`${BASE_URL}/topten`), function(json) {
-                JSON.stringify(json);            
-                location.reload();
-            }
-           
-            this.game.rank()
         })
+/*
         on(
             name,
             'input',
             ()=>{
-                const empty = name.value === '';
+              //  const empty = name.value === '';
+                const empty = $('#name').value = '';
                 const attr = empty ? 'setAttribute' : 'removeAttribute';
                 btn[attr]('disabled','disabled');
             }
-        )
+        )*/
     }   
 }

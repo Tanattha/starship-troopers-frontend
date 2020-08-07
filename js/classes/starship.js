@@ -7,7 +7,6 @@ class Starship extends Element{
         super.setup(obj);
         this.bulletCooldown = new Cooldown(config[obj].bulletCooldown);
         this.deathAnimation = new Animation(config.starshipDeathAnimation,this.scene);
-      
         this.canFire = true;
     }
 
@@ -50,8 +49,6 @@ class Starship extends Element{
             y: this.y,
             w: this.w,
             h : this.h,
-            
-
         }).end(() => {
             this.isDeath = true;
         });

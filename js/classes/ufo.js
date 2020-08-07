@@ -5,8 +5,7 @@ class Ufo extends Starship{
         super.setup('ufo');
         this.y = random(0, h-this.h);
     }
-
-   update() {
+    update() {
     this.move();
     super.update();
  }
