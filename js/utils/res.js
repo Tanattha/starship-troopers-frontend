@@ -28,7 +28,7 @@ const res = (() => {
     }
   
     o.end = (key)=>{
-       _audios[key].currentTime = 0;
+        _audios[key].currentTime = 0;
         _audios[key].pause();  
     };
 

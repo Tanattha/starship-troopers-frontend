@@ -6,8 +6,7 @@ class Over extends Scene{
         this.event();
         $("#logo").classList.remove('play-status');
         $('#name').value = '';
-        res.end('ost');
-
+        
     }
 
     updateView(){
@@ -28,7 +27,7 @@ class Over extends Scene{
             btn,
             'click',
             ()=>{
-       
+            
            let configObj = {
             method: "POST",
             headers: {
@@ -40,11 +39,9 @@ class Over extends Scene{
               
                 fetch(`${BASE_URL}/users`, configObj)
                 .then(response => response.json())
-                .then(res => console.log(res))
                
                 fetch(`${BASE_URL}/topten`, {method: 'get'})
                 .then(response => response.json())
-                .then(res => console.log(res))
                
                 .catch((error) => {console.error('Error:', error)});
                 

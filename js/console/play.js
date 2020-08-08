@@ -27,6 +27,7 @@ class Play extends Scene {
     end() {
         raf.remove(this.raf_id);
         res.end('bg');
+       // res.end('ost')
         hotkey.clearAll();
     }
     initData() {
