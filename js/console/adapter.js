@@ -1,7 +1,7 @@
 class Adapter {
     constructor() {
        //this.BASE_URL = 'http://127.0.0.1:3000';
-       this.BASE_URL = = 'https://starship-troopers.herokuapp.com';
+       this.BASE_URL = 'https://starship-troopers.herokuapp.com';
     }
   
     createUser(data) {
