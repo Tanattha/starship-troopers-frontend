@@ -2,11 +2,12 @@
 class Over extends Scene{
     setup() {
         this.game.data.end = true;
-        this.updateView()
+        this.updateView();
         this.event();
         $("#logo").classList.remove('play-status');
         $('#name').value = '';
-        
+        this.adapter = new Adapter();
+       
     }
 
     updateView(){
@@ -27,26 +28,15 @@ class Over extends Scene{
             btn,
             'click',
             ()=>{
-            
-           let configObj = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"  
-            },
-                body: JSON.stringify({username: name.value, num: getScore.innerText})
-            }
-              
-                fetch(`${BASE_URL}/users`, configObj)
-                .then(response => response.json())
-               
-                fetch(`${BASE_URL}/topten`, {method: 'get'})
-                .then(response => response.json())
-               
-                .catch((error) => {console.error('Error:', error)});
-                
-                this.game.rank()
-            
+                if (name.value == null || name.value == "") {
+                    this.game.rank()
+                } else {
+                    const data = {username: name.value, num: getScore.innerText}
+                    this.adapter.createUser(data)
+                    this.adapter.getRanks()
+                    this.game.rank()
+                }
         })
+       
     }   
 }

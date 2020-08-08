@@ -16,4 +16,5 @@ class Scene{
     hidden() {
         this.el.classList.remove('action');
     }
+
 }

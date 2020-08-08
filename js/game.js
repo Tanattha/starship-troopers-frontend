@@ -61,4 +61,5 @@ class Game {
         this.toggleScene('rank');
     }
 
+
 }
