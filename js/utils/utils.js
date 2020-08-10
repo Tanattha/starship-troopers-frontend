@@ -185,7 +185,7 @@ const incrementAnimation = (start, end, callback) => {
         if (current === end) {
             clearInterval(time);
         }
-    }, 30)
+    }, 10)
 }
 
 const localStorageData = (() => {

@@ -6,7 +6,6 @@ class Over extends Scene{
         this.event();
         $("#logo").classList.remove('play-status');
         $('#name').value = '';
-        this.adapter = new Adapter();
        
     }
 
@@ -28,14 +27,28 @@ class Over extends Scene{
             btn,
             'click',
             ()=>{
-                if (name.value == null || name.value == "") {
-                    this.game.rank()
-                } else {
+                if (name.value != "") {
                     const data = {username: name.value, num: getScore.innerText}
-                    this.adapter.createUser(data)
-                    this.adapter.getRanks()
-                    this.game.rank()
+
+                    fetch(`${BASE_URL}/users`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"  
+                        },
+                        body: JSON.stringify(data)
+                    })
+                      .then(response => response.json())
+                      .then(response => console.log(response))
+                      .catch((error) => {console.error('Error:', error)})
+                    
+
+                    fetch(`${BASE_URL}/topten`)
+                    .then(response => response.json())
+                    .then(response => console.log(response))
+                    .catch((error) => {console.error('Error:', error)})
                 }
+                this.game.rank()
         })
        
     }   

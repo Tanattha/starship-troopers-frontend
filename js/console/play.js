@@ -74,12 +74,14 @@ class Play extends Scene {
             this.collision(bullet, el, (a, b) => {
                 a.reduceLife();
                 b.reduceLife();
-                if (!b.run) {
-                    callback(b);
-                }             
+               // if (!b.run) {
+                    callback(el);
+               // }             
             });
         });
     }
+    
+
 
     playerCollision(el) {
         this.collision(this.player, el, () => {
@@ -174,6 +176,7 @@ class Play extends Scene {
         const game = this.game;
         const call = () => {
             $('#score').innerHTML = numberFormat(game.data.score);
+            console.log('score:'+ game.data.score)
         }
         if (num === 0) {
             return call();
