@@ -1,6 +1,12 @@
 const config = {};
 const fps = 60;
 
+<<<<<<< HEAD
+=======
+//const BASE_URL = 'http://127.0.0.1:3000';
+const BASE_URL = 'https://starship-troopers.herokuapp.com';
+
+>>>>>>> bd382cc775d431ce1012b53aa21cb45f8ceb0a65
 
 (() => {
 
