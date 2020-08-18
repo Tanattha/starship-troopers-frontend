@@ -3,12 +3,12 @@ class Rank extends Scene {
         super.setup();
         this.event();
         this.rank();
+
     }
  
     rank() {
-        
-        fetch(`${BASE_URL}/topten`)
-        .then(response => response.json())
+        const getrank = new Adapter();
+        getrank.getRanks()
         .then((data) => {
             data.forEach(e => {
             let html = `
@@ -18,11 +18,11 @@ class Rank extends Scene {
                  <td>${e.num}</td>
              </tr>
             `
-         $('#rank table tbody').innerHTML += html;
+            $('#rank table tbody').innerHTML += html;
        
-        });
-    })
-    .catch((error) => {console.error('Error:', error)});
+            });
+        })
+        .catch((error) => {console.error('Error:', error)});
     }
 
     event() {
