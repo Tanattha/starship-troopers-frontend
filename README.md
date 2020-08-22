@@ -2,7 +2,7 @@
 
 # Starship-Troopers-Frontend
 
-You'll be in a role of starship troopers to kill all the enemies. Starship-troopers was built with JavaScript for the frontend and Rails API for the backend.
+Become a Starship Trooper as you take down enemy UFOs and aliens! All interactions between the client and the server is handled asynchronously (AJAX) and uses JSON as the communication format.
 
 <img src="./src/game.png" width="640" height="400" />
 
